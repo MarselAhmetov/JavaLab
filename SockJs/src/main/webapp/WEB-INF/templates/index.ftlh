@@ -71,6 +71,10 @@
 </head>
 <body onload="connect()">
 <div>
+
+
+   <p id="hp"></p>
+
     <#list rooms as room>
         <button onclick="connectToRoom('${room.name}', '${username}')">Connect to room: ${room.name}</button>
     </#list>
