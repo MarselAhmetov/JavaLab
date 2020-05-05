@@ -63,7 +63,6 @@ public class RequestDispatcher {
                         .build());
                 // TODO: 30.04.2020 If is not null
                 queues.get(taskMessage.getQueueName()).add(taskMessage);
-                System.out.println(queues.toString());
                 if (consumers.containsKey(taskMessage.getQueueName())) {
                     taskManager.sendTask(taskMessage.getQueueName());
                 }
@@ -78,6 +77,7 @@ public class RequestDispatcher {
                 break;
 
             case "completed":
+                System.out.println("Completed\n");
                 TaskMessage completeTaskMessage = objectMapper.readValue(socketMessage, JsonTaskMessage.class).getPayload();
                 Task completeTask = taskService.getByTaskId(completeTaskMessage.getMessageId());
                 completeTask.setStatus(TaskStatus.COMPLETED);

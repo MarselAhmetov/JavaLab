@@ -27,6 +27,6 @@ public class QueueController {
     public ModelAndView createQueue(@RequestParam("queueName") String queueName) {
         queues.put(queueName, new ArrayDeque<>());
         System.out.println(queues.toString());
-        return new ModelAndView("redirect:/produce");
+        return new ModelAndView("redirect:/consumer");
     }
 }

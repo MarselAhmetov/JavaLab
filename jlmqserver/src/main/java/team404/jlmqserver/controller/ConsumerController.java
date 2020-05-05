@@ -33,6 +33,7 @@ public class ConsumerController {
                 .subscribe(queueName)
                 .onReceive(webSocketHandler)
                 .create();
-        return new ModelAndView("redirect:/consumer");
+        System.out.println("Creating consumer for " + queueName);
+        return new ModelAndView("redirect:/produce");
     }
 }

@@ -15,7 +15,7 @@ import java.util.Queue;
 public class JlmqserverApplication {
 
     @Bean
-    public Map<String, Queue<TaskMessage>> queues() {
+    public Map<String, Queue<String>> queues() {
         return new HashMap<>();
     }
 

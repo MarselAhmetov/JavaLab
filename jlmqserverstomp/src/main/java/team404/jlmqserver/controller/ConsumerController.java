@@ -33,7 +33,7 @@ public class ConsumerController {
                 .address("ws://localhost:8080/messages")
                 .connect();
         JlmqConsumer consumer = connector.consumer()
-                .subscribe(queueName)
+                .subscribe("queue/" + queueName)
                 .onReceive(customerStompSessionHandler)
                 .create();
         return new ModelAndView("redirect:/consumer");

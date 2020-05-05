@@ -9,6 +9,7 @@
 </head>
 <body>
 <form action="/consumer" method="post">
+    <label for="">Consumer</label>
     <input type="text" name="queueName" placeholder="Queue name">
     <input type="submit" value="Send">
 </form>

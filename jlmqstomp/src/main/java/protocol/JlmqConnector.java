@@ -2,6 +2,8 @@ package protocol;
 
 import lombok.AllArgsConstructor;
 import org.springframework.messaging.converter.MappingJackson2MessageConverter;
+import org.springframework.messaging.converter.SimpleMessageConverter;
+import org.springframework.messaging.converter.StringMessageConverter;
 import org.springframework.messaging.simp.stomp.StompFrameHandler;
 import org.springframework.messaging.simp.stomp.StompHeaders;
 import org.springframework.messaging.simp.stomp.StompSession;
@@ -75,7 +77,7 @@ public class JlmqConnector {
         public JlmqConsumer create() {
             try {
                 WebSocketStompClient stompClient = new WebSocketStompClient(webSocketClient);
-                stompClient.setMessageConverter(new MappingJackson2MessageConverter());
+                stompClient.setMessageConverter(new StringMessageConverter());
                 StompSession session = stompClient.connect(address, sessionHandler).get();
                 System.out.println("/jlmq/" + queueName);
                 session.subscribe("/jlmq/" + queueName, sessionHandler);

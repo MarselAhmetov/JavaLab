@@ -65,7 +65,7 @@
         <dependency>
             <groupId>team404</groupId>
             <artifactId>jlmqstomp</artifactId>
-            <version>1.2</version>
+            <version>1.3</version>
         </dependency>
     </dependencies>
 

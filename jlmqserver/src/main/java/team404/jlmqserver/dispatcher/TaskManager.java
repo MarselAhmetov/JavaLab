@@ -31,7 +31,7 @@ public class TaskManager {
                 .build());
 
         TextMessage textMessage = new TextMessage(message);
-        System.out.println("Sending task: " + message);
+        System.out.println("Sending task to " + queueName);
         consumers.get(queueName).sendMessage(textMessage);
     }
 
