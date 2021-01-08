@@ -1,0 +1,8 @@
+###
+GET http://localhost:8080/company/search
+
+###
+GET http://localhost:8080/company/search?name=Company3
+
+###
+GET http://localhost:8080/company/search?countries.name=Russia
